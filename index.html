@@ -1209,35 +1209,191 @@ footer {
 }
 
 
-/* ── RESPONSIVE ── */
+/* ── NAV MOBILE TOGGLE ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — TABLET (≤ 960px)
+   ══════════════════════════════════════════ */
 @media (max-width: 960px) {
+
+  section { padding: 70px 6%; }
+
+  .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .timeline-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .tracks-grid { grid-template-columns: 1fr; }
+  .prize-tracks { grid-template-columns: 1fr; }
+  .prize-ind { grid-template-columns: 1fr; }
+  .criteria-grid { grid-template-columns: repeat(2, 1fr); }
+  .tier-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .wie-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .qr-references-wrap {
+    flex-direction: column;
+    gap: 2rem;
+  }
   .references-block {
     margin-top: 1.5rem;
     align-self: center;
+    align-items: center;
+    text-align: center;
   }
+  .references-title { text-align: center; }
+  .qr-placeholder { width: 260px; }
 }
 
-@media (max-width: 560px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .tier-grid { grid-template-columns: 1fr; }
+/* ══════════════════════════════════════════
+   RESPONSIVE — NAV (≤ 768px)
+   ══════════════════════════════════════════ */
+@media (max-width: 768px) {
 
-  .info-row {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
     flex-direction: column;
-    gap: 0.45rem;
+    gap: 0;
+    background: rgba(8,12,24,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(126,184,212,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links.open { max-height: 400px; }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(126,184,212,0.06);
   }
 
-  .info-v {
+  .nav-cta { display: none; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤ 640px)
+   ══════════════════════════════════════════ */
+@media (max-width: 640px) {
+
+  body { font-size: 14px; }
+  section { padding: 56px 6%; }
+  .hero { padding: 90px 6% 60px; }
+
+  .nexus-emblem { width: 110px; }
+  .hero-title { font-size: clamp(2.2rem, 14vw, 3.6rem); }
+  .hero-desc { max-width: 100%; }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto 3rem;
+  }
+  .hero-btns .btn-solid,
+  .hero-btns .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .qr-placeholder { width: 220px; }
+  .references-block { max-width: 280px; }
+  .ref-btn { font-size: 0.78rem; padding: 0.8rem 1rem; }
+
+  .stats-row { flex-direction: column; }
+  .stat-cell {
+    border-right: none;
+    border-bottom: 1px solid rgba(126,184,212,0.12);
+    padding: 1.1rem 1rem;
+  }
+  .stat-cell:last-child { border-bottom: none; }
+
+  .sec-title { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .sec-desc { max-width: 100%; }
+
+  .track { padding: 2rem 1.5rem; }
+
+  .phase-item { grid-template-columns: 28px 1fr; gap: 0 1rem; }
+
+  .wie-box { padding: 1.75rem 1.25rem; }
+
+  .prize-grand-amt { font-size: 2.6rem; }
+  .prize-grand { padding: 2.25rem 1.25rem; }
+  .ind-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
     text-align: left;
   }
+  .ind-name { max-width: 100%; }
 
-  .org-row {
-    gap: 10px;
+  .criteria-grid { grid-template-columns: 1fr; }
+  .tier-grid { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .foot-desc { max-width: 100%; }
+  .foot-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
-  .org-chip {
-    font-size: 10px;
-    padding: 9px 14px;
+  .table-title { font-size: 1rem; padding: 1.25rem 1.5rem; }
+  .info-row, .info-panel-head, .fee-table th, .fee-table td, .fee-table caption {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
+
+  .info-row { flex-direction: column; gap: 0.45rem; }
+  .info-v { text-align: left; }
+
+  .org-row { gap: 10px; }
+  .org-chip { font-size: 10px; padding: 9px 14px; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — SMALL PHONES (≤ 400px)
+   ══════════════════════════════════════════ */
+@media (max-width: 400px) {
+  .nav-logo-text { font-size: 14px !important; }
+  .hero-tag { font-size: 9px; letter-spacing: 0.18em; }
+  .qr-placeholder { width: 180px; }
+  .prize-grand-amt { font-size: 2.2rem; }
 }
 
 </style>
@@ -1262,6 +1418,9 @@ footer {
     <li><a href="#sponsors">Sponsors</a></li>
   </ul>
   <a class="nav-cta" href="#references">Register Now</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1693,6 +1852,24 @@ footer {
     <p>Multimedia University, 63100 Cyberjaya, Selangor</p>
   </div>
 </footer>
+
+<!-- MOBILE NAV TOGGLE -->
+<script>
+(function(){
+  const toggle = document.getElementById('navToggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', function(){
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+})();
+</script>
 
 <!-- BACKGROUND: Constellation + Stars + Parallax -->
 <script>
