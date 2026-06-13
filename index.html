@@ -1211,12 +1211,10 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
-  .about-layout, .timeline-wrap, .wie-box { grid-template-columns: 1fr; }
-  .tracks-grid, .prize-tracks, .criteria-grid { grid-template-columns: 1fr; }
-  .prize-ind { grid-template-columns: 1fr; }
-  .tier-grid { grid-template-columns: repeat(2,1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .nav-links { display: none; }
+  .references-block {
+    margin-top: 1.5rem;
+    align-self: center;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1297,6 +1295,7 @@ footer {
   </div>
 
   <div class="references-block">
+    <div class="references-title">References</div>
 
     <a class="ref-btn" href="terms-conditions.pdf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
