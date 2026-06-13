@@ -214,6 +214,125 @@ nav {
   margin-bottom: 4rem;
 }
 
+.qr-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 4rem;
+}
+
+.qr-placeholder {
+  width: 320px;
+  aspect-ratio: 470 / 540;
+  border: 1px dashed rgba(126,184,212,0.35);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(126,184,212,0.05), rgba(126,184,212,0.015));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.qr-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(126,184,212,0.08) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(126,184,212,0.08) 50%, transparent 51%);
+  background-size: 25% 25%;
+  opacity: 0.5;
+}
+
+.qr-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.qr-placeholder-text {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--dim);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.qr-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.qr-references-wrap {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.references-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 320px;
+  margin-top: -130px;
+}
+
+.references-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 0.25rem;
+}
+
+.references-title::before {
+  content: '// ';
+  color: var(--accent);
+}
+
+.ref-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, #ff6b35, #f7374f);
+  color: #fff;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  line-height: 1.4;
+}
+
+.ref-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(247,55,79,0.25);
+}
+
+.ref-btn svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
 .btn-solid {
   font-family: var(--mono);
   font-size: 11px;
@@ -1144,7 +1263,7 @@ footer {
     <li><a href="#prizes">Awards</a></li>
     <li><a href="#sponsors">Sponsors</a></li>
   </ul>
-  <a class="nav-cta" href="#">Register Now</a>
+  <a class="nav-cta" href="#references">Register Now</a>
 </nav>
 
 <!-- HERO -->
@@ -1158,10 +1277,41 @@ footer {
   <p class="hero-desc">Build real solutions to real problems with AI. A 4-month national engineering innovation challenge for Malaysian university students.</p>
 
   <div class="hero-btns">
+  </div>
+  </div>
+
+<div style="margin-top: -75px;">
+  <div class="hero-btns" style="margin-bottom: 2.5rem">
     <a class="btn-solid" href="#roadmap">Timeline</a>
     <a class="btn-outline" href="#about">Learn More</a>
   </div>
+
+<div class="qr-references-wrap" id="references">
+
+  <div class="qr-wrap">
+    <div class="qr-placeholder">
+      <img src="qr-code.png" alt="Registration QR Code" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span class="qr-placeholder-text" style="display:none">QR CODE</span>
+    </div>
+    <span class="qr-caption">Scan to Register</span>
   </div>
+
+  <div class="references-block">
+    <div class="references-title">References</div>
+
+    <a class="ref-btn" href="terms-conditions.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Terms and Conditions PDF
+    </a>
+
+    <a class="ref-btn" href="official-handbook.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Official Handbook PDF
+    </a>
+  </div>
+
+</div>
+
 </section>
 
 <hr class="div">
@@ -1491,34 +1641,14 @@ footer {
     <div class="eyebrow" style="margin-bottom:0.5rem">sponsorship</div>
     <h2 class="sec-title" style="margin-bottom:0.75rem">SPONSORS</h2>
     <p class="sec-desc">Proudly supported by forward-thinking organisations dedicated to fueling the next generation of AI innovation.</p>
-    <div class="tier-grid">
-      <div class="tier-card feat">
-        <span class="tier-label lbl-title">Title</span>
-        <span class="tier-amt">LOGO</span>
-        <div class="tier-bens"></div>
+
+    <div style="margin-top:3rem; border: 1px solid rgba(126,184,212,0.16); border-radius: 18px; padding: 4rem 2rem; text-align:center; background: linear-gradient(180deg, rgba(18,28,52,0.88) 0%, rgba(10,15,30,0.92) 100%); backdrop-filter: blur(14px); box-shadow: 0 0 0 1px rgba(126,184,212,0.04), 0 20px 50px rgba(0,0,0,0.28);">
+       <div style="font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2.2rem); color: var(--accent); letter-spacing: 0.06em; text-shadow: 0 0 40px rgba(126,184,212,0.25);">
+        WILL BE ANNOUNCED IN PHASE 3!
       </div>
-      <div class="tier-card feat">
-        <span class="tier-label lbl-title">Title</span>
-        <span class="tier-amt">LOGO</span>
-        <div class="tier-bens"></div>
-      </div>
-      <div class="tier-card feat">
-        <span class="tier-label lbl-title">Title</span>
-        <span class="tier-amt">LOGO</span>
-        <div class="tier-bens"></div>
-      </div>
-      <div class="tier-card feat">
-        <span class="tier-label lbl-title">Title</span>
-        <span class="tier-amt">LOGO</span>
-        <div class="tier-bens"></div>
-      </div>
-      <div class="tier-card feat">
-        <span class="tier-label lbl-title">Title</span>
-        <span class="tier-amt">LOGO</span>
-        <div class="tier-bens"></div>    </div>
+    </div>
   </div>
 </section>
-
 <hr class="div">
 
 <!-- FOOTER -->
@@ -1544,9 +1674,9 @@ footer {
     </div>
     <div class="foot-col">
       <span class="foot-col-title">Resources</span>
-      <a href="#">Download Handbook</a>
-      <a href="#">Rules &amp; Guidelines</a>
-      <a href="#">Register Now</a>
+      <a href="#references">Download Terms and Conditions</a>
+      <a href="#references">Download Official Handbook</a>
+      <a href="#references">Register Now</a>
     </div>
     <div class="foot-col">
 <span class="foot-col-title">Contact</span>
