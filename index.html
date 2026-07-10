@@ -540,15 +540,6 @@ hr.div { border: none; border-top: 1px solid rgba(126,184,212,0.08); margin: 0; 
     0 0 25px rgba(126,184,212,0.06);
 }
 
-.table-title::before {
-  content: "// ";
-  color: var(--accent);
-}
-
-.table-title::before {
-  content: "// ";
-  color: var(--accent);
-}
 
 .table-title {
   position: relative;
@@ -1642,7 +1633,7 @@ footer {
     <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-word">Seconds</span></div>
   </div>
 
-  <div class="countdown-status" id="cd-status">15 Jun 2026 12:00 AM — 11 Jul 2026 12:00 AM (GMT+8)</div>
+  <div class="countdown-status" id="cd-status">15 Jun 2026 12:00 AM — 1 Aug 2026 11:59 PM (GMT+8)</div>
 </div>
 
 <div class="qr-references-wrap" id="references">
@@ -1710,7 +1701,7 @@ footer {
 
     <div class="info-row">
       <div class="info-k">Duration</div>
-      <div class="info-v">4 Months (June–September 2026)</div>
+      <div class="info-v">4 Months (June–October 2026)</div>
     </div>
 
     <div class="info-row">
@@ -1847,7 +1838,7 @@ footer {
       <div class="eyebrow">Competition Timeline</div>
       <h2 class="sec-title">TIMELINE</h2>
       <p class="sec-desc" style="margin-bottom:2rem">From an idea, to a live hardware showcase at MMU Cyberjaya.</p>
-      <a class="btn-solid" href="#" style="font-size:10px">Register by July 11 →</a>
+      <a class="btn-solid" href="#" style="font-size:10px">Register by August 1 →</a>
     </div>
     <div class="phases">
       <div class="phase-item">
@@ -1856,10 +1847,12 @@ footer {
           <div class="phase-line"></div>
         </div>
         <div class="phase-body">
-          <div class="phase-date">Phase 1 &nbsp;·&nbsp; Jun 15 – Jul 26</div>
-          <div class="phase-name">REGISTRATION &amp; IDEATION</div>
+          <div class="phase-date">Phase 1 &nbsp;·&nbsp; Jun 15 – Aug 1</div>
+          <div class="phase-name">REGISTRATION &amp IDEATION</div>
           <p class="phase-desc">Form your team, select a track, and submit a written proposal with a 3-minute pitch video.</p>
           <ul class="phase-list">
+            <li>Aug 3 — Participant Briefing & Ideation Launch</li>
+            <li>Aug 16 — Phase 1 Proposal Submission Deadline</li>
           </ul>
         </div>
       </div>
@@ -1869,11 +1862,9 @@ footer {
           <div class="phase-line"></div>
         </div>
         <div class="phase-body">
-          <div class="phase-date">Phase 2 &nbsp;·&nbsp; Jul 29 – Aug 25</div>
+          <div class="phase-date">Phase 2 &nbsp;·&nbsp; Aug 19 – Sep 15</div>
           <div class="phase-name">SELECTION, FUNDING &amp; WORKSHOPS</div>
           <p class="phase-desc">Top 30 teams (10 per track) announced. Each receives RM700 seed grant + workshop series.</p>
-          <ul class="phase-list">
-          </ul>
         </div>
       </div>
       <div class="phase-item">
@@ -1882,10 +1873,11 @@ footer {
           <div class="phase-line"></div>
         </div>
         <div class="phase-body">
-          <div class="phase-date">Phase 3 &nbsp;·&nbsp; Aug 26 – Sep 16</div>
+          <div class="phase-date">Phase 3 &nbsp;·&nbsp; Sep 16 – Sep 30</div>
           <div class="phase-name">BUILD &amp; MENTORSHIP</div>
           <p class="phase-desc">Full build period for physical prototypes. Two mentorship weeks. Submit final video + finalised proposal.</p>
           <ul class="phase-list">
+            <li>Oct 7 — Phase 3 Proposal & Video Submission Deadline</li>
           </ul>
         </div>
       </div>
@@ -1894,11 +1886,9 @@ footer {
           <div class="phase-dot"></div>
         </div>
         <div class="phase-body">
-          <div class="phase-date">Phase 4 &nbsp;·&nbsp; Sep 26, 2026</div>
-          <div class="phase-name">GRAND FINALE — MMU CYBERJAYA</div>
+          <div class="phase-date">Phase 4 &nbsp;·&nbsp; Oct 17, 2026</div>
+          <div class="phase-name">GRAND FINALE SHOWCASE — MMU CYBERJAYA</div>
           <p class="phase-desc">Full-day live showcase. Public exhibition, sponsor career booths, final pitches to the judges panel, and awards ceremony.</p>
-          <ul class="phase-list">
-          </ul>
         </div>
       </div>
     </div>
@@ -2084,7 +2074,7 @@ footer {
           <span class="faq-chevron">+</span>
         </button>
         <div class="faq-a">
-          <p>Registration closes on <strong>11 July 2026 at 12:00 AM (GMT+8)</strong>. Late registrations will not be accepted, so make sure your team registers early.</p>
+          <p>Registration closes on <strong>1 August 2026 at 11:59 PM (GMT+8)</strong>. Late registrations will not be accepted, so make sure your team registers early.</p>
         </div>
       </div>
 
@@ -2095,7 +2085,7 @@ footer {
           <span class="faq-chevron">+</span>
         </button>
         <div class="faq-a">
-          <p>You will receive a <strong>confirmation mail within 1 week after registation closes on 11th July 2026</strong>. If you do not receive a confirmation mail, your registration is either <strong>invalid or rejected.</strong></p>
+          <p>You will receive a <strong>confirmation mail within 1 week after registration closes on 1st August 2026</strong>. If you do not receive a confirmation mail, your registration is either <strong>invalid or rejected.</strong></p>
         </div>
       </div>
 
@@ -2265,9 +2255,9 @@ footer {
 /* ── COUNTDOWN TIMER ── */
 (function(){
   // Registration opens: 15 Jun 2026 00:00 GMT+8
-  // Registration closes: 11 Jul 2026 00:00 GMT+8
+  // Registration closes: 1 Aug 2026 23:59 GMT+8
   const OPEN  = new Date('2026-06-15T00:00:00+08:00').getTime();
-  const CLOSE = new Date('2026-07-11T00:00:00+08:00').getTime();
+  const CLOSE = new Date('2026-08-01T23:59:00+08:00').getTime();
 
   const elDays  = document.getElementById('cd-days');
   const elHours = document.getElementById('cd-hours');
@@ -2293,15 +2283,15 @@ footer {
 
     if(phase === 'opening'){
       elHead.innerHTML = 'Registration Opens In';
-      elStatus.textContent = '15 Jun 2026 12:00 AM — 11 Jul 2026 12:00 AM (GMT+8)';
+      elStatus.textContent = '15 Jun 2026 12:00 AM — 1 Aug 2026 11:59 PM (GMT+8)';
       elStatus.className = 'countdown-status';
     } else if(phase === 'open'){
       elHead.innerHTML = 'Registration Closes In <span>— Open Now!</span>';
-      elStatus.textContent = '✦ Registration is open — closes 11 Jul 2026 at 12:00 AM (GMT+8)';
+      elStatus.textContent = '✦ Registration is open — closes 1 Aug 2026 at 11:59 PM (GMT+8)';
       elStatus.className = 'countdown-status open';
     } else {
       elHead.innerHTML = 'Registration Has <span>Closed</span>';
-      elStatus.textContent = '✦ Registration closed on 11 Jul 2026';
+      elStatus.textContent = '✦ Registration closed on 1 Aug 2026';
       elStatus.className = 'countdown-status closed';
       elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = '00';
       return; // stop ticking
